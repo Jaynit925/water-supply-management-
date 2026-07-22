@@ -711,7 +711,11 @@ include("code/header.php");
     <script src="assets/js/easing.js"></script>
     
     <!--==== google map api key ====-->
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB2D8wrWMY3XZnuHO6C31uq90JiuaFzGws"></script>
+  <?php
+$googleMapsKey = $_ENV['GOOGLE_MAPS_API_KEY'] ?? '';
+?>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=<?php echo htmlspecialchars($googleMapsKey, ENT_QUOTES, 'UTF-8'); ?>"></script> 
     
     <!-- ==== Script js file==== -->
     <script src="assets/js/scripts.js"></script>
